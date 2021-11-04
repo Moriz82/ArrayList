@@ -7,7 +7,7 @@ struct ArrayList {
     int nextIndex = 0;
     int length = 5;
 
-    void add(type element) {
+    bool add(type element) {
         if (nextIndex >= length){
             type* newArr = new type[length+5];
             for (int i = 0; i < length; ++i)
@@ -18,11 +18,12 @@ struct ArrayList {
         }
         array[nextIndex] = element;
         nextIndex++;
+        return true;
     }
 
-    void add(type element, int index){
+    bool insert(type element, int index){
         if (index < 0)
-            return;
+            return false;
         if (index >= length){
             int dist = index-length;
             dist++;
@@ -34,7 +35,7 @@ struct ArrayList {
             length += dist;
         }
         array[index] = element;
-        cout<<"";
+        return true;
     }
 
     type get(int index){
@@ -43,9 +44,9 @@ struct ArrayList {
         return array[index];
     }
 
-    void remove(int index){
+    bool remove(int index){
         if (index < 0 || index >= length)
-            return;
+            return false;
         type* newArr = new type[length-1];
         for (int i = 0; i < index; ++i) {
             newArr[i] = array[i];
@@ -56,6 +57,7 @@ struct ArrayList {
         delete[] array;
         array = newArr;
         length--;
+        return true;
     }
 
     bool find(type element){
@@ -64,5 +66,20 @@ struct ArrayList {
                 return true;
         }
         return false;
+    }
+
+    int size(){
+        return length;
+    }
+
+    string toString(){
+        string str = "[";
+        for (int i = 0; i < length; ++i) {
+            if (i+1 == length)
+                str += array[i]+"]";
+            else
+                str += array[i]+", ";
+        }
+        return str;
     }
 };
