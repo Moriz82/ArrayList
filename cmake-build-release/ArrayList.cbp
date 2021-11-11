@@ -85,6 +85,9 @@
 		<Unit filename="C:/Users/willi/CLionProjects/ArrayList/ArrayList.h">
 			<Option target="ArrayList"/>
 		</Unit>
+		<Unit filename="C:/Users/willi/CLionProjects/ArrayList/Itterator.h">
+			<Option target="ArrayList"/>
+		</Unit>
 		<Unit filename="C:/Users/willi/CLionProjects/ArrayList/main.cpp">
 			<Option target="ArrayList"/>
 		</Unit>
